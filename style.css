@@ -7,12 +7,13 @@
 }
 
 :root {
-  font-size: 62.5%;
+  font-size: 53%;
 }
 
 body {
   font-size: 1.6rem;
   font-family: "inter", sans-serif;
+  background-color: #292738;
 }
 
 /* Utilites Class */
@@ -22,16 +23,14 @@ body {
 
 /* ================== */
 #app {
-  background-color: #292738;
-  grid-template-columns: 26.6rem max-content max-content;
-  grid-template-rows: max-content;
   column-gap: 3.2rem;
   row-gap: 5.9rem;
 
-  width: 100vw;
-  height: 100vh;
-  padding: 11.2rem 11.3rem;
-
+  margin: auto;
+  width: fit-content;
+  min-height: 100vh;
+  height: fit-content;
+  padding: 3.2rem;
   place-content: center;
 }
 .box {
@@ -41,12 +40,7 @@ body {
   box-shadow: 0.3rem 0.4rem 2.6rem rgba(0, 0, 0, 0.25);
   border-radius: 1.6rem;
   line-height: 160%;
-}
-
-.box:nth-child(4) {
-  grid-column: 1/4; /* Same as  */
-  /* grid-column-start: 1;
-  grid-column-end: 4; */
+  gap: 3.2rem;
 }
 
 .top {
@@ -182,11 +176,13 @@ svg circle:nth-child(2) {
 
 .weekly-sell .wrapper {
   display: flex;
+  flex-direction: column;
   gap: 3.2rem;
 }
 
 .weekly-sell .left {
   gap: 3.2rem;
+  grid-auto-flow: column;
 }
 
 .weekly-sell .left,
@@ -229,8 +225,9 @@ svg circle:nth-child(2) {
 
 .bars {
   display: flex;
-  gap: 5.5rem;
+  gap: 1.5rem;
   align-items: flex-end;
+  justify-content: center;
   position: relative;
 }
 
@@ -271,5 +268,38 @@ svg circle:nth-child(2) {
 @keyframes upBars {
   0% {
     height: 0;
+  }
+}
+
+/* RESPONSIVE FOR DESKTOP*/
+
+@media (min-width: 1200px) {
+  :root {
+    font-size: 62.5%;
+  }
+
+  #app {
+    grid-template-columns: 26.6rem max-content max-content;
+    grid-template-rows: max-content;
+  }
+
+  .box:nth-child(4) {
+    grid-column: 1/4;
+
+    /* Same as  */
+    /* grid-column-start: 1;
+    grid-column-end: 4; */
+  }
+
+  .weekly-sell .wrapper {
+    flex-direction: row;
+  }
+
+  .weekly-sell .left {
+    grid-auto-flow: initial;
+  }
+
+  .bars {
+    gap: 5.3rem;
   }
 }
