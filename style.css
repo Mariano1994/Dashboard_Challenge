@@ -20,6 +20,7 @@ body {
   display: grid;
 }
 
+/* ================== */
 #app {
   background-color: #292738;
   grid-template-columns: 26.6rem max-content max-content;
@@ -167,4 +168,96 @@ svg circle:nth-child(2) {
 
 .content h3 {
   font-size: 3.4rem;
+}
+
+/* WEEKLY SELL STYLING */
+
+.text-left {
+  text-align: left;
+}
+
+.weekly-sell {
+  gap: 3.2rem;
+}
+
+.weekly-sell .wrapper {
+  display: flex;
+  gap: 3.2rem;
+}
+
+.weekly-sell .left {
+  gap: 3.2rem;
+}
+
+.weekly-sell .left,
+.weekly-sell .right {
+  flex: 1;
+}
+
+.left .grid {
+  gap: 0.8rem;
+  font-weight: 500;
+  font-size: 2.4rem;
+}
+
+.left .grid span {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.left .grid span::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.left .most-sell span::before {
+  background: linear-gradient(180deg, #81fbb8 0%, #28c76f 100%);
+  margin-top: -0.3rem;
+}
+
+.left .less-sell span::before {
+  background: linear-gradient(180deg, #ea5455 0%, #feb692 100%);
+  transform: matrix(1, 0, 0, -1, 0, 0);
+  margin-bottom: -0.3rem;
+}
+
+.bars {
+  display: flex;
+  gap: 5.9rem;
+  align-items: flex-end;
+  position: relative;
+}
+
+.bars::before {
+  content: "";
+  display: block;
+  height: 0.2rem;
+  width: 100%;
+  background: #4a4556;
+  border: 100px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+
+.bar-wrapper {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+}
+
+.bar {
+  width: 1.5rem;
+  height: var(--height);
+
+  background: linear-gradient(180deg, #90f7ec 0%, #32ccbc 100%);
+  border-radius: 100px;
 }
