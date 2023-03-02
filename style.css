@@ -108,6 +108,7 @@ body {
 .middle {
   display: grid;
   place-content: center;
+  position: relative;
 }
 
 /* STYLING DANUT CHART */
@@ -143,4 +144,27 @@ svg circle:nth-child(2) {
     stroke-dasharray: 618.8;
     stroke-dashoffset: 618.8;
   }
+}
+
+.middle .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: grid;
+  place-content: center;
+  justify-items: center;
+
+  gap: 0.5rem;
+
+  /* OPTION3 WITH FLEX */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+.content h3 {
+  font-size: 3.4rem;
 }
