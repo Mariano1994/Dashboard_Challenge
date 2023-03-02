@@ -229,7 +229,7 @@ svg circle:nth-child(2) {
 
 .bars {
   display: flex;
-  gap: 5.9rem;
+  gap: 5.5rem;
   align-items: flex-end;
   position: relative;
 }
@@ -249,15 +249,27 @@ svg circle:nth-child(2) {
 
 .bar-wrapper {
   display: grid;
+  grid-template-rows: 15.9rem 1.6rem;
   justify-items: center;
   gap: 0.5rem;
   z-index: 1;
 }
 
 .bar {
-  width: 1.5rem;
+  width: 1.3rem;
   height: var(--height);
+  align-self: end;
 
   background: linear-gradient(180deg, #90f7ec 0%, #32ccbc 100%);
   border-radius: 100px;
+
+  animation: upBars 1.2s backwards;
+  animation-delay: 0.3s;
+}
+
+/* ANIMANTIONS */
+@keyframes upBars {
+  0% {
+    height: 0;
+  }
 }
